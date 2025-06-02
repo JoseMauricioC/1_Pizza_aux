@@ -79,7 +79,6 @@ async function handleSave() {
           v-model="cliente.apellido"
           class="flex-auto"
           autocomplete="off"
-          autofocus
         />
       </div>
 
@@ -90,7 +89,6 @@ async function handleSave() {
           v-model="cliente.telefono"
           class="flex-auto"
           autocomplete="off"
-          autofocus
         />
       </div>
 
@@ -101,7 +99,6 @@ async function handleSave() {
           v-model="cliente.direccion"
           class="flex-auto"
           autocomplete="off"
-          autofocus
         />
       </div>
 

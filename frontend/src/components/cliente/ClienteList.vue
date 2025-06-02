@@ -6,11 +6,16 @@ import { onMounted, ref } from 'vue'
 
 const ENDPOINT = 'clientes'
 const clientes = ref<Cliente[]>([])
+const emit = defineEmits(['edit'])
 const clienteDelete = ref<Cliente | null>(null)
 const mostrarConfirmDialog = ref<boolean>(false)
 
 async function obtenerLista() {
   clientes.value = await http.get(ENDPOINT).then((response) => response.data)
+}
+
+function emitirEdicion(cliente: Cliente) {
+  emit('edit', cliente)
 }
 
 function mostrarEliminarConfirm(cliente: Cliente) {
@@ -51,7 +56,7 @@ defineExpose({ obtenerLista })
           <td>{{ cliente.telefono }}</td>
           <td>{{ cliente.direccion }}</td>
           <td>
-            <Button icon="pi pi-pencil" aria-label="Editar" text />
+            <Button icon="pi pi-pencil" aria-label="Editar" text @click="emitirEdicion(cliente)" />
             <Button
               icon="pi pi-trash"
               aria-label="Eliminar"
