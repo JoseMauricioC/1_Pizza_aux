@@ -9,6 +9,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import * as bcrypt from 'bcrypt';
+//import { Venta } from 'src/ventas/entities/venta.entity';
 
 @Entity('usuarios')
 export class Usuario {

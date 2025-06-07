@@ -8,6 +8,7 @@ import {
   Min,
 } from 'class-validator';
 import { Cliente } from 'src/clientes/entities/cliente.entity';
+//import { Usuario } from 'src/usuarios/entities/usuario.entity';
 
 export class CreateVentaDto {
   @ApiProperty()
